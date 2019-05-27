@@ -1,0 +1,45 @@
+﻿image_png.obj : error LNK2019: unresolved external symbol png_set_sig_bytes referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+image_png.obj : error LNK2019: unresolved external symbol png_sig_cmp referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+image_png.obj : error LNK2019: unresolved external symbol png_create_read_struct referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+image_png.obj : error LNK2019: unresolved external symbol png_create_info_struct referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+image_png.obj : error LNK2019: unresolved external symbol png_read_info referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+image_png.obj : error LNK2019: unresolved external symbol png_destroy_info_struct referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+image_png.obj : error LNK2019: unresolved external symbol png_destroy_read_struct referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+image_png.obj : error LNK2019: unresolved external symbol png_init_io referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+image_png.obj : error LNK2019: unresolved external symbol png_free referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+image_png.obj : error LNK2019: unresolved external symbol png_get_image_width referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+image_png.obj : error LNK2019: unresolved external symbol png_get_image_height referenced in function "void __cdecl read_png_file(char const *,int *,int *)" (?read_png_file@@YAXPEBDPEAH1@Z)
+keyboard.obj : error LNK2019: unresolved external symbol SDL_GetScancodeFromKey referenced in function "int __cdecl Keyboard_GetKeyCnt(int)" (?Keyboard_GetKeyCnt@@YAHH@Z)
+video.obj : error LNK2001: unresolved external symbol SDL_GetScancodeFromKey
+mouse.obj : error LNK2019: unresolved external symbol SDL_GetMouseState referenced in function "void __cdecl Mouse_Tick(void)" (?Mouse_Tick@@YAXXZ)
+sound.obj : error LNK2019: unresolved external symbol SDL_OpenAudio referenced in function "void __cdecl Sound_Init(void)" (?Sound_Init@@YAXXZ)
+sound.obj : error LNK2019: unresolved external symbol SDL_PauseAudio referenced in function "void __cdecl Sound_Init(void)" (?Sound_Init@@YAXXZ)
+sound.obj : error LNK2019: unresolved external symbol SDL_LockAudio referenced in function "void __cdecl Sound_Lock(void)" (?Sound_Lock@@YAXXZ)
+sound.obj : error LNK2019: unresolved external symbol SDL_UnlockAudio referenced in function "void __cdecl Sound_Unlock(void)" (?Sound_Unlock@@YAXXZ)
+sprites.obj : error LNK2019: unresolved external symbol SDL_FreeSurface referenced in function "public: __cdecl Sprite::~Sprite(void)" (??1Sprite@@QEAA@XZ)
+sprites.obj : error LNK2019: unresolved external symbol SDL_CreateTextureFromSurface referenced in function "private: struct Frame * __cdecl Sprite::CreateFrame(char const *)" (?CreateFrame@Sprite@@AEAAPEAUFrame@@PEBD@Z)
+sprites.obj : error LNK2019: unresolved external symbol SDL_SetTextureBlendMode referenced in function "private: struct Frame * __cdecl Sprite::CreateFrame(char const *)" (?CreateFrame@Sprite@@AEAAPEAUFrame@@PEBD@Z)
+sprites.obj : error LNK2019: unresolved external symbol SDL_RenderCopy referenced in function "public: void __cdecl Sprite::draw(int,int)" (?draw@Sprite@@QEAAXHH@Z)
+sprites.obj : error LNK2019: unresolved external symbol SDL_DestroyTexture referenced in function "public: __cdecl Sprite::~Sprite(void)" (??1Sprite@@QEAA@XZ)
+sprites.obj : error LNK2019: unresolved external symbol IMG_Quit referenced in function "public: __cdecl Sprite::~Sprite(void)" (??1Sprite@@QEAA@XZ)
+sprites.obj : error LNK2019: unresolved external symbol IMG_Load referenced in function "private: struct Frame * __cdecl Sprite::CreateFrame(char const *)" (?CreateFrame@Sprite@@AEAAPEAUFrame@@PEBD@Z)
+video.obj : error LNK2019: unresolved external symbol SDL_SetMainReady referenced in function "public: __cdecl Screen::Screen(unsigned int,unsigned int)" (??0Screen@@QEAA@II@Z)
+main.obj : error LNK2001: unresolved external symbol SDL_SetMainReady
+video.obj : error LNK2019: unresolved external symbol SDL_GetError referenced in function "private: void __cdecl Screen::initializeHardware(int,int,int,bool)" (?initializeHardware@Screen@@AEAAXHHH_N@Z)
+video.obj : error LNK2019: unresolved external symbol SDL_CreateWindow referenced in function "private: void __cdecl Screen::init(int,int,bool)" (?init@Screen@@AEAAXHH_N@Z)
+video.obj : error LNK2019: unresolved external symbol SDL_ShowWindow referenced in function "public: void __cdecl Screen::show(void)" (?show@Screen@@QEAAXXZ)
+video.obj : error LNK2019: unresolved external symbol SDL_DestroyWindow referenced in function "public: __cdecl Screen::~Screen(void)" (??1Screen@@QEAA@XZ)
+video.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function "private: void __cdecl Screen::processEventSystem(void)" (?processEventSystem@Screen@@AEAAXXZ)
+video.obj : error LNK2019: unresolved external symbol SDL_CreateRenderer referenced in function "private: void __cdecl Screen::init(int,int,bool)" (?init@Screen@@AEAAXHH_N@Z)
+video.obj : error LNK2019: unresolved external symbol SDL_SetRenderDrawColor referenced in function "private: void __cdecl Screen::clearBackBuffer(int,int,int)" (?clearBackBuffer@Screen@@AEAAXHHH@Z)
+video.obj : error LNK2019: unresolved external symbol SDL_RenderClear referenced in function "private: void __cdecl Screen::clearBackBuffer(int,int,int)" (?clearBackBuffer@Screen@@AEAAXHHH@Z)
+video.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function "private: void __cdecl Screen::flip(void)" (?flip@Screen@@AEAAXXZ)
+video.obj : error LNK2019: unresolved external symbol SDL_DestroyRenderer referenced in function "public: __cdecl Screen::~Screen(void)" (??1Screen@@QEAA@XZ)
+video.obj : error LNK2019: unresolved external symbol SDL_Init referenced in function "public: __cdecl Screen::Screen(unsigned int,unsigned int)" (??0Screen@@QEAA@II@Z)
+main.obj : error LNK2001: unresolved external symbol SDL_Init
+video.obj : error LNK2019: unresolved external symbol SDL_Quit referenced in function "public: __cdecl Screen::~Screen(void)" (??1Screen@@QEAA@XZ)
+main.obj : error LNK2001: unresolved external symbol SDL_Quit
+C:\Users\Gerard\Desktop\BatallaNavalAlumnes\\extlibs\libpng16.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Gerard\Desktop\BatallaNavalAlumnes\\extlibs\SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Gerard\Desktop\BatallaNavalAlumnes\\extlibs\SDL2_image.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Gerard\Desktop\BatallaNavalAlumnes\\Program\BatallaNaval.exe : fatal error LNK1120: 37 unresolved externals

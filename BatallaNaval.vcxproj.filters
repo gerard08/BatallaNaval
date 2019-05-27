@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado\lib">
+      <UniqueIdentifier>{3f3df06c-e512-4641-84c8-a709038f5b3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\lib">
+      <UniqueIdentifier>{53c8e5b8-c899-4dcc-9e96-b5c60c29beea}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\debug.cpp">
+      <Filter>Archivos de origen\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\image_png.cpp">
+      <Filter>Archivos de origen\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\keyboard.cpp">
+      <Filter>Archivos de origen\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\mouse.cpp">
+      <Filter>Archivos de origen\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\sound.cpp">
+      <Filter>Archivos de origen\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\sprites.cpp">
+      <Filter>Archivos de origen\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\stb_vorbis.cpp">
+      <Filter>Archivos de origen\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\video.cpp">
+      <Filter>Archivos de origen\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="joc.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Vaixell.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Jugador.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Pantalla.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Partida.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\debug.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\error.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\image_png.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\keyboard.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\keyboard_sdl.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\libreria.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\mouse.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sound.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sprites.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\stb_vorbis.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\video.h">
+      <Filter>Archivos de encabezado\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="joc.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Vaixell.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Partida.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Pantalla.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Jugador.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Anterior.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="llista.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
