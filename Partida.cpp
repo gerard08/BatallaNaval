@@ -30,15 +30,12 @@ void Partida::visualitza(bool& passat)
 	else
 	{
 		m_tauler.visualitza();
-		//if(m_torn!=0)atac();
-		//m_torn++;
 	}
 }
 void Partida::IniciaEnemic()
 {
 	int l = 0;
-	
-	srand((unsigned)time(0));
+	int repeticions = 0;
 	for (int i = 0; i < 10; i++)
 	{
 		if (l <= (m_MaxElements) / 4)
@@ -52,12 +49,11 @@ void Partida::IniciaEnemic()
 		if (temp %2 == 0)direccio = 1;
 		else direccio = 0;
 		//ncaselles
-		ncaselles = 2 + rand() % (5 - 2);
+		ncaselles = 2 + rand() % (5 - 1);
 		bool xoc=false;
 		bool repetit_;
 		do
 		{
-		//	cout << "intentem" << endl;
 			repetit_ = false;
 			//fila
 			if (direccio == 0)fila = 1 + (rand() % (11 - 1 ));
@@ -74,13 +70,10 @@ void Partida::IniciaEnemic()
 
 			xoc = false;
 			int j = 0;
-			while (!xoc && j <= ncaselles)
+			while (!xoc && j < ncaselles)
 			{
 				if (direccio == 0)
 				{
-					/*int temp = m_tauler.getPosicioContrari(fila-1, columna-1+j);
-					if (temp == 1)xoc = true;
-					*/
 					if (m_tauler.getPosicioContrari(fila, columna + j))xoc = true;
 					if (repetit(fila, columna))xoc = true;
 					if (fila + ncaselles >= 10)xoc = true;
@@ -110,8 +103,8 @@ void Partida::IniciaEnemic()
 				}
 
 			}
-			
-			//m_enemic.afegeixVaixell(fila, columna, direccio, ncaselles);
+			repeticions++;
+			if(repeticions==10)	srand((unsigned)time(0));
 		} while (xoc == true || repetit_==true);
 		
 	
@@ -123,33 +116,17 @@ void Partida::IniciaEnemic()
 		}
 		if (!repetit_)
 		{
-			//for (int j = 0; j < ncaselles; j++)
-			//{
 				llista[l].setX(fila);
 				llista[l].setY(columna);
 				l++;
-			//}
 		}
-		//m_jugador1.afegeixVaixell(fila, columna, direccio, ncaselles);
 		m_enemic.afegeixVaixell(fila, columna, direccio, ncaselles);
-		cout << fila << " " << columna << " " << direccio << " " << ncaselles << endl;
-		//m_tauler.graba("data/tauler_huma.txt", "data/tauler_ordinador.txt");
-		if (i >= 10)
-		{
-			delete[] llista;
-			llista = nullptr;
-		}
+		//cout << fila << " " << columna << " " << direccio << " " << ncaselles << endl;
+		repeticions = 0;
 	}
-	//////////////////////////
+		delete[] llista;
+		llista = nullptr;
 	
-	/*for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j < 10; j++)
-		{
-			m_tauler.setTauler(1, i, j, m_tauler.getTauler(0, i, j));
-		}
-	}
-	//*/
 }
 //atacs
 bool Partida::ataca(const bool& tauler, const int& fila, const int& columna)
@@ -169,14 +146,14 @@ void Partida::atac(int u_x, int u_y)
 	bool tocat;
 	if (m_torn % 2==0)
 	{
-		cout << "torn meu < " << m_torn << " >" << endl;
+		cout << "torn jugador < " << m_torn << " >" << endl;
 		tocat=ataca(0, u_x, u_y);
 		if (tocat)comprovaxoc(0, u_x, u_y);
 		else m_torn++;
 	}
 	else
 	{
-		cout << "torn seu < " << m_torn << " >" << endl;
+		cout << "torn enemic < " << m_torn << " >" << endl;
 		if (nmax == 0)redimensiona(TAMANY_MINIM);
 		else if (m_nElements > nmax / 4)redimensiona(nmax * 2);
 		pensa(x, y);
@@ -202,7 +179,6 @@ void Partida::redimensiona(int dim)
 	nmax = dim;
 	aux = nullptr;
 }
-
 void Partida::amplia(int dim)
 {
 	Llista* aux;
@@ -219,7 +195,6 @@ void Partida::amplia(int dim)
 	llista = aux;
 	aux = nullptr;
 }
-
 void Partida::pensa(int& x, int& y)
 {
 	int aux=0;
@@ -233,40 +208,32 @@ void Partida::pensa(int& x, int& y)
 			x = anterior[m_nElements - 1].getX();
 			if (anterior[m_nElements - 1].getY() < 10)y = anterior[m_nElements - 1].getY() + 1;
 			else y = anterior[m_nElements - 1].getY() - 1;
-//			cout << "avall";
 			if (repetit(x, y))aux = 1;
 			else aux = 50;
-//			cout << x << y << endl;
 		}
 		if (anterior[m_nElements - 2].getTocat() == true && m_nElements >= 2 && aux<2)
 		{
 			x = anterior[m_nElements - 2].getX();
 			if (anterior[m_nElements - 2].getY() >= 10)y = anterior[m_nElements - 2].getY() - 1;
 			else y = anterior[m_nElements - 2].getY() - 1;
-	//		cout << "amunt";
 			if (repetit(x, y))aux = 2;
 			else aux = 50;
-	//		cout << x << y << endl;
 		}
 		if (anterior[m_nElements - 3].getTocat() == true && m_nElements >= 3 && aux<3)
 		{
 			if (anterior[m_nElements - 3].getX() >= 10)x = anterior[m_nElements - 3].getX() - 1;
 			else x = anterior[m_nElements - 3].getX() + 1;
 			y = anterior[m_nElements - 3].getY();
-	//		cout << "dreta";
 			if (repetit(x, y))aux = 3;
 			else aux = 50;
-	//		cout << x << y << endl;
 		}
 		if (anterior[m_nElements - 4].getTocat() == true && m_nElements >= 4 && aux<4)
 		{
 			if (anterior[m_nElements - 4].getX() >= 10) x = anterior[m_nElements - 4].getX() - 1;
 			else x = anterior[m_nElements - 4].getX() - 1;
 			y = anterior[m_nElements - 4].getY();
-	//		cout << "esquerra";
 			if (repetit(x, y))aux = 4;
 			else aux = 50;
-	//		cout << x << y << endl;
 		}
 	
 		if (!repetit(x,y))
@@ -290,7 +257,6 @@ bool Partida::repetit(int x, int y)
 		i++;
 	}
 	if (x > 9)trobat = true;
-	//cout << trobat;
 	return trobat;
 }
 //reacció als atacs
@@ -342,7 +308,6 @@ void Partida::comprovaxoc(bool enemic, int x, int y)
 					}
 					enfonsat = true;
 				}
-				//cout << "bo";
 			}
 		}
 	}
@@ -361,9 +326,11 @@ void Partida::comprovaxoc(bool enemic, int x, int y)
 				{
 					if (x == fila && y == columna)
 					{
+						cout<<m_jugador1.getVaixell(i_).getNCasellesVives()<<endl;
 						vaixell_.tocat();
 						m_jugador1.setVaixell(i_, vaixell_);
-						cout << "tocat" << endl;
+						cout << m_jugador1.getVaixell(i_).getNCasellesVives()<<endl;
+
 					}
 					columna++;
 				}
@@ -373,7 +340,6 @@ void Partida::comprovaxoc(bool enemic, int x, int y)
 					{
 						vaixell_.tocat();
 						m_jugador1.setVaixell(i_, vaixell_);
-						cout << "tocat" << endl;
 					}
 					fila++;
 				}
@@ -387,17 +353,13 @@ void Partida::comprovaxoc(bool enemic, int x, int y)
 					y_ = m_jugador1.getVaixell(i_).getColumna();
 					for (int j_ = 0; j_ < m_jugador1.getVaixell(i_).getNcaselles(); j_++)
 					{
-						cout << "dins" << endl;
 						if (m_jugador1.getVaixell(i_).getDireccio() == 1)
 						{
 							m_tauler.setTauler(1, x_, y_ + j_, 3);
-							cout << "direccio 1" << endl;
 						}
 						else if(m_jugador1.getVaixell(i_).getDireccio()==0)
 						{
 							m_tauler.setTauler(1, x_ + j_, y_, 3);
-							cout << "direccio 0" << endl;
-
 						}
 					}
 				}
@@ -416,13 +378,11 @@ bool Partida::getAcabat(bool &guanyador)
 		{
 			acabat = true;
 			guanyador = true;
-			cout << "ets un looser" << endl;
 		}
 		if (m_enemic.getNVaixellsVius()==0)
 		{
 			acabat = true;
 			guanyador = false;
-			cout << "Has guanyat gamarus" << endl;
 		}
 	}
 	return acabat;
@@ -491,7 +451,6 @@ void Partida::afegeixVaixell(int x, int y)
 					m_nElements_temp--;
 					repetit = true;
 					m_tauler.setTauler(1, x, y, 0);
-					//cout << "repe";
 				}
 				i++;
 			}
@@ -545,7 +504,6 @@ void Partida::guarda()
 		}
 		fitxer << endl;
 	}
-	//fitxer << endl;
 	//fitxer << "MatriuEnemic: " << endl;
 	for (int i = 1; i < 11; i++)
 	{
@@ -555,7 +513,6 @@ void Partida::guarda()
 		}
 		fitxer << endl;
 	}
-//	fitxer << endl;
 	//fitxer << "Vaixells jugador: " << endl;
 	Vaixell aux;
 	for (int i = 0; i < 20; i++)
@@ -587,6 +544,7 @@ void Partida::guarda()
 
 void Partida::carrega()
 {
+	preparacio = false;
 	m_enemic.setnVaixellsVius(0);
 	m_tauler.setAux(true);
 	ifstream fitxer;

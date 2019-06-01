@@ -32,7 +32,6 @@ public:
 	void setAfegint(bool tf) { afegint = tf; };
 	void permetComencar(bool permis);
 	int getnVaixells() { return m_nVaixells; };
-	//void anima() { m_tauler.anima(); };
 	void guarda();
 	void carrega();
 	bool getCarrego() { return m_tauler.getCarrego(); };

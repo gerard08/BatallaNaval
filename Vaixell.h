@@ -26,7 +26,7 @@ private:
 	int m_fila;
 	int m_columna;
 	int m_direccio;
-	bool* m_estat;
+//	bool* m_estat;
 	int m_nCaselles;
 	int m_nCasellesVives;
 };

@@ -1,3 +1,4 @@
-﻿  Partida.cpp
-C:\Users\ger-m\source\repos\Projecte_final\Partida.cpp(51): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+﻿  joc.cpp
+C:\Users\ger-m\source\repos\Projecte_final\joc.cpp(98): warning C4244: 'argumento': conversión de 'double' a 'Uint32'; posible pérdida de datos
+C:\Users\ger-m\source\repos\Projecte_final\joc.cpp(114): warning C4244: 'argumento': conversión de 'double' a 'Uint32'; posible pérdida de datos
   BatallaNaval.vcxproj -> C:\Users\ger-m\source\repos\Projecte_final\\Program\BatallaNaval.exe

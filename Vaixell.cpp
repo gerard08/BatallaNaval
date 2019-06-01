@@ -7,7 +7,7 @@ Vaixell::Vaixell()
 	m_direccio=0;
 	m_nCaselles=0;
 	m_nCasellesVives=0;
-	m_estat = nullptr;
+	//m_estat = nullptr;
 }
 
 Vaixell::Vaixell(int fila, int columna, int direccio, int nCaselles)
@@ -16,10 +16,10 @@ Vaixell::Vaixell(int fila, int columna, int direccio, int nCaselles)
 	m_columna = columna;
 	m_direccio = direccio;
 	m_nCaselles = m_nCasellesVives = nCaselles;
-	m_estat = new bool[nCaselles];
+	//m_estat = new bool[nCaselles];
 
-	for (int i = 0; i < nCaselles; i++)
-		m_estat[i] = true;
+	//for (int i = 0; i < nCaselles; i++)
+		//m_estat[i] = true;
 
 }
 
@@ -36,7 +36,7 @@ Vaixell::Vaixell(const Vaixell& v)
 	m_direccio = v.m_direccio;
 	m_nCaselles = v.m_nCaselles;
 	m_nCasellesVives = v.m_nCasellesVives;
-	if (v.m_estat != nullptr)
+	/*if (v.m_estat != nullptr)
 	{
 		m_estat = new bool[m_nCaselles];
 		for (int i = 0; i < m_nCaselles; i++)
@@ -44,7 +44,7 @@ Vaixell::Vaixell(const Vaixell& v)
 	}
 	else
 		m_estat = nullptr;
-
+		*/
 }
 Vaixell& Vaixell::operator=(const Vaixell& v)
 {
@@ -55,7 +55,7 @@ Vaixell& Vaixell::operator=(const Vaixell& v)
 		m_direccio = v.m_direccio;
 		m_nCaselles = v.m_nCaselles;
 		m_nCasellesVives = v.m_nCasellesVives;
-		if (m_estat != nullptr)
+		/*if (m_estat != nullptr)
 		//	delete[] m_estat;
 		if (v.m_estat != nullptr)
 		{
@@ -64,7 +64,7 @@ Vaixell& Vaixell::operator=(const Vaixell& v)
 				m_estat[i] = v.m_estat[i];
 		}
 		else
-			m_estat = nullptr;
+			m_estat = nullptr;*/
 	}
 	return *this;
 }
@@ -74,9 +74,9 @@ Vaixell& Vaixell::operator=(const Vaixell& v)
 void Vaixell::setNCaselles(int nCaselles)
 {
 	m_nCaselles = m_nCasellesVives = nCaselles;
-	if (m_estat != nullptr)
-		delete[] m_estat;
+	/*if (m_estat != nullptr)
+	//¡	delete[] m_estat;
 	m_estat = new bool[nCaselles];
 	for (int i = 0; i < nCaselles; i++)
-		m_estat[i] = true;
+		m_estat[i] = true;*/
 }

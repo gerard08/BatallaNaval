@@ -78,7 +78,7 @@ void Pantalla::visualitza()
 			switch (m_taulerContrari[i][j])
 			{
 			case 0: m_interrogant.draw(52+520 + i * 52, j * 52); break;
-			case 1: m_interrogant.draw(52+520 + i * 52, j * 52); break;
+			case 1: m_vaixell.draw(52+520 + i * 52, j * 52); break;
 			case 2: m_tocat.draw(52+520 + i * 52, j * 52); break;
 			case 3: m_enfonsat.draw(52+520 + i * 52, j * 52); break;
 			default: m_aigua.draw(52+520 + i * 52, j * 52); break;

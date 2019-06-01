@@ -23,6 +23,8 @@ void joc(bool mode)
 	nova.setAcabat(false);
 	Sprite victoria;
 	Sprite derrota;
+	victoria.create("data/perdut.png");
+	derrota.create("data/guanyat.png");
 	//bool fi;
 	bool guanyador;
 	do
@@ -30,21 +32,29 @@ void joc(bool mode)
 		// Captura tots els events de ratolí i teclat de l'ultim cicle
 		pantalla.processEvents();
 		nova.visualitza(passat);
-		if (mode == true)nova.setTf(false);
+		if (mode)nova.setTf(false);
 		if (animat)
 		{
-			if (guanyador) victoria.draw(0, 0);
-			else derrota.draw(0, 0);
+			if (guanyador)
+			{
+				victoria.draw(0, 0);
+			}
+			else
+			{
+				derrota.draw(0, 0);
+			}
 		}
 		if (passat)
 		{
 			if (nova.getCarrego())
 			{
+				
 				nova.carrega();
 				nova.setCarrego(false);
-				//nova.setAcabat(true);
 				nova.setAfegint(false);
 				nova.setPreparacio(false);
+				victoria.create("data/perdut.png");
+				derrota.create("data/guanyat.png");
 			}
 			if (Mouse_getButLeft())
 			{
@@ -71,14 +81,13 @@ void joc(bool mode)
 				if (x == 10 && y == 1)nova.guarda();
 			}
 		}
-		if (nova.getPreparacio() == false)
+		if (!nova.getPreparacio())
 		{
 			if (nova.getAcabat(guanyador))
 			{	
 				if (guanyador)
 				{
 					int i = 0;
-					victoria.create("data/perdut.png");
 					if (!animat)
 					{
 						//animació has perdut
@@ -95,7 +104,6 @@ void joc(bool mode)
 				if (!guanyador)
 				{
 					int i = 0;
-					derrota.create("data/guanyat.png");
 					if (!animat)
 					{
 						//animació has perdut
@@ -111,7 +119,7 @@ void joc(bool mode)
 				}
 			}
 		}
-
+		//nova.getAcabat(guanyador);
 		pantalla.update();
 
 	} while (!Keyboard_GetKeyTrg(KEYBOARD_ESCAPE) && nova.getTf()==false);
